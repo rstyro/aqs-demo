@@ -30,9 +30,11 @@ public class CountDownLatchDemo {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
+                }finally {
+                    //闭锁减一
+                    countDownLatch.countDown();
                 }
-                //闭锁减一
-                countDownLatch.countDown();
+
             });
         }
         Thread.sleep(5*1000);
